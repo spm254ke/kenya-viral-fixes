@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kenya Tech Response Hub | March 2026</title>
+    <script src="https://unpkg.com/intasend-inlinejs-sdk@latest/build/intasend-inline.js"></script>
+    <style>
+        body { font-family: sans-serif; background: #f9f9f9; padding: 20px; text-align: center; }
+        .viral-box { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; border-left: 8px solid #4CAF50; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2e7d32; margin-top: 0; }
+        .price { font-size: 1.2rem; font-weight: bold; color: #333; }
+        .btn { background: #4CAF50; color: white; border: none; padding: 15px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>🇰🇪 Viral Tech Fixes (LIVE)</h1>
+    <p>Get instant solutions to the March 2nd updates.</p>
+
+    <div class="viral-box">
+        <h2>Ziidi Trader Automation</h2>
+        <p>Master the new M-Pesa share trading platform launched in Feb 2026.</p>
+        <div class="price">KES 2,000</div>
+        <button class="intaSendPayButton btn" data-amount="2000" data-currency="KES">Get the Script</button>
+    </div>
+
+    <div class="viral-box">
+        <h2>AI Policy Compliance Kit</h2>
+        <p>The 48-hour checklist for Kenyan AI startups to avoid the new penalties.</p>
+        <div class="price">KES 3,500</div>
+        <button class="intaSendPayButton btn" data-amount="3500" data-currency="KES">Download PDF</button>
+    </div>
+
+    <script>
+        new window.IntaSend({
+            publicAPIKey: "ISPubKey_live_dc5967eb-6e6a-497c-a10f-35a76358efea",
+            live: true
+        }).on("COMPLETE", () => { window.location.href="success.html"; });
+    </script>
+</body>
+</html>
