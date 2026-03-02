@@ -3,82 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenya Tech Fixes | March 2026 Hub</title>
+    <title>Kenya Tech Response Hub | LIVE March 2026</title>
     <script src="https://unpkg.com/intasend-inlinejs-sdk@latest/build/intasend-inline.js"></script>
     <style>
-        :root { --primary: #b32d2e; --secondary: #4CAF50; --dark: #1a1a1a; }
-        body { font-family: 'Inter', sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
-        .header { background: var(--dark); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--secondary); }
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .price { font-size: 1.5rem; font-weight: bold; color: var(--dark); margin: 15px 0; }
-        .btn { background: var(--secondary); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+        :root { --kra: #b32d2e; --mpesa: #4CAF50; --sha: #0056b3; --dark: #1a1a1a; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #f8f9fa; margin: 0; padding: 0; color: #333; }
+        header { background: var(--dark); color: white; padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--mpesa); }
+        .live-tag { background: #ff4757; color: white; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; animation: blink 1.5s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 6px solid #ccc; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        .card h3 { margin-top: 10px; font-size: 1.2rem; color: #1a1a1a; }
+        .category { font-size: 0.7rem; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 1.4rem; font-weight: 800; margin: 15px 0; color: #333; }
+        .btn { background: var(--mpesa); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; transition: 0.2s; }
         .btn:hover { background: #3d8b40; }
-        .badge { background: #eee; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        /* Category Colors */
+        .c-kra { border-color: var(--kra); } .c-mpesa { border-color: var(--mpesa); } .c-sha { border-color: var(--sha); }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>🇰🇪 Kenya Viral Tech Fixes</h1>
-    <p>Instant digital solutions for the March 2, 2026 system updates.</p>
-</div>
+<header>
+    <div class="live-tag">LIVE UPDATES: MARCH 2, 2026</div>
+    <h1>🇰🇪 Kenya Digital Emergency Hub</h1>
+    <p>Get instant technical fixes for today's KRA, M-Pesa, and SHA transitions.</p>
+</header>
 
 <div class="container">
-    <div class="grid" id="storefront-grid">
+    <div class="grid" id="main-catalogue">
         </div>
 </div>
 
 <script>
-    const products = [
-        { slug: "mpesa-masking-fix", title: "M-Pesa Number Masking Fix", price: 2500, category: "M-PESA" },
-        { slug: "kra-nil-ai-bypass", title: "KRA Nil Return AI Bypass", price: 1500, category: "KRA" },
-        { slug: "sha-system-bypass", title: "SHA Hospital Manual Template", price: 4500, category: "HEALTH" },
-        { slug: "etims-lite-integration", title: "eTIMS Lite 2026 Setup", price: 3000, category: "KRA" },
-        { slug: "ziidi-nse-bot", title: "Ziidi NSE Automation Bot", price: 2000, category: "INVEST" },
-        { slug: "starlink-nairobi-speed", title: "Starlink Nairobi Speed Fix", price: 1800, category: "TECH" },
-        { slug: "fuliza-reversal-guide", title: "Fuliza Erroneous Refund", price: 1200, category: "FINANCE" },
-        { slug: "kra-p9-autopopulate", title: "KRA P9-less Filing Fix", price: 1000, category: "KRA" },
-        { slug: "ecitizen-urgent-visa", title: "eCitizen Visa Escalation", price: 5500, category: "GOV" },
-        { slug: "nfc-tap-pay-setup", title: "M-Pesa Tap & Pay NFC Setup", price: 1500, category: "BUSINESS" },
-        { slug: "ai-bill-audit-kit", title: "Kenya AI Governance Kit", price: 3500, category: "LEGAL" },
-        { slug: "helb-band-appeal", title: "HELB Band 5 Appeal Guide", price: 1000, category: "STUDENT" },
-        { slug: "kplc-token-instant", title: "KPLC Token SMS Delay Fix", price: 500, category: "UTILITY" },
-        { slug: "whatsapp-privacy-ads", title: "Stop WhatsApp Meta AI Ads", price: 1000, category: "PRIVACY" },
-        { slug: "airtel-space-beta", title: "Airtel Direct-to-Cell Setup", price: 2000, category: "TECH" },
-        { slug: "rental-tax-calc", title: "KRA 7.5% Rental Calculator", price: 2500, category: "KRA" },
-        { slug: "fiber-evening-restore", title: "Home Fiber Speed Restore", price: 1500, category: "TECH" },
-        { slug: "stk-push-timeout", title: "Fix M-Pesa STK Timeout", price: 3000, category: "WEB" },
-        { slug: "data-privacy-audit", title: "Data Protection Audit 2026", price: 5000, category: "CORP" },
-        { slug: "starlink-transfer-fix", title: "Starlink Kit Transfer Fix", price: 2000, category: "TECH" },
-        { slug: "kra-itax-password", title: "iTax Security Reset Bypass", price: 1500, category: "KRA" }
+    const catalogue = [
+        { slug: "mpesa-masking-fix", title: "M-Pesa Number Masking Patch", price: 2500, cat: "M-PESA", style: "c-mpesa" },
+        { slug: "kra-nil-ai-bypass", title: "KRA Nil Return AI Bypass", price: 1500, cat: "KRA", style: "c-kra" },
+        { slug: "sha-system-bypass", title: "SHA Hospital Manual Forms", price: 4500, cat: "HEALTH", style: "c-sha" },
+        { slug: "etims-lite-setup", title: "eTIMS Lite Mobile Setup", price: 3000, cat: "KRA", style: "c-kra" },
+        { slug: "ziidi-nse-bot", title: "Ziidi NSE Automation Bot", price: 2000, cat: "INVEST", style: "c-mpesa" },
+        { slug: "starlink-nbo-speed", title: "Starlink Nairobi Speed Fix", price: 1800, cat: "TECH", style: "c-sha" },
+        { slug: "fuliza-reversal-fix", title: "Fuliza Lock Refund Guide", price: 1200, cat: "FINANCE", style: "c-mpesa" },
+        { slug: "kra-p9-autopop", title: "KRA P9-less Filing Fix", price: 1000, cat: "KRA", style: "c-kra" },
+        { slug: "ecitizen-urgent-visa", title: "eCitizen Visa Escalation", price: 5500, cat: "GOV", style: "c-sha" },
+        { slug: "nfc-tap-setup", title: "M-Pesa Tap & Pay NFC Fix", price: 1500, cat: "MERCHANT", style: "c-mpesa" },
+        { slug: "ai-bill-audit", title: "Kenya AI Governance Kit", price: 3500, cat: "LEGAL", style: "c-sha" },
+        { slug: "helb-band-appeal", title: "HELB Band 5 Appeal Tech", price: 1000, cat: "STUDENT", style: "c-sha" },
+        { slug: "kplc-token-delay", title: "KPLC Token SMS Bypass", price: 500, cat: "UTILITY", style: "c-kra" },
+        { slug: "whatsapp-meta-ads", title: "Stop Meta AI Ads (Opt-Out)", price: 1000, cat: "PRIVACY", style: "c-sha" },
+        { slug: "airtel-space-setup", title: "Airtel SpaceX Satellite Beta", price: 2000, cat: "TECH", style: "c-mpesa" },
+        { slug: "rental-tax-calc", title: "7.5% Residential Tax Tool", price: 2500, cat: "KRA", style: "c-kra" },
+        { slug: "fiber-evening-dns", title: "Evening Fiber Speed DNS", price: 1500, cat: "TECH", style: "c-sha" },
+        { slug: "stk-push-timeout", title: "M-Pesa STK Timeout Patch", price: 3000, cat: "WEB", style: "c-mpesa" },
+        { slug: "data-privacy-audit", title: "Data Protection Audit 2026", price: 5000, cat: "CORP", style: "c-sha" },
+        { slug: "starlink-kit-fix", title: "Starlink Kit Resale Activation", price: 2000, cat: "TECH", style: "c-sha" },
+        { slug: "kra-itax-reset", title: "iTax Security Reset Bypass", price: 1500, cat: "KRA", style: "c-kra" }
     ];
 
-    const grid = document.getElementById('storefront-grid');
-    products.forEach(p => {
+    const grid = document.getElementById('main-catalogue');
+    
+    // Injecting all 21 items
+    catalogue.forEach(item => {
         grid.innerHTML += `
-            <div class="card">
+            <div class="card ${item.style}">
                 <div>
-                    <span class="badge">${p.category}</span>
-                    <h3>${p.title}</h3>
+                    <span class="category">${item.cat}</span>
+                    <h3>${item.title}</h3>
                 </div>
                 <div>
-                    <div class="price">KES ${p.price.toLocaleString()}</div>
-                    <button class="intaSendPayButton btn" data-amount="${p.price}" data-currency="KES" data-email="customer@example.com">Buy Fix Now</button>
-                    <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">Instant M-Pesa Delivery</p>
+                    <div class="price">KES ${item.price.toLocaleString()}</div>
+                    <button class="intaSendPayButton btn" 
+                        data-amount="${item.price}" 
+                        data-currency="KES" 
+                        data-email="customer@spm254.tech">
+                        Buy with M-Pesa
+                    </button>
                 </div>
             </div>
         `;
     });
 
-    // Initialize IntaSend
+    // IntaSend Implementation
     new window.IntaSend({
         publicAPIKey: "ISPubKey_live_dc5967eb-6e6a-497c-a10f-35a76358efea",
         live: true
     }).on("COMPLETE", (results) => {
-        window.location.href = "success.html?tid=" + results.transaction_id;
+        window.location.href = "success.html?ref=" + results.transaction_id;
     });
 </script>
 
