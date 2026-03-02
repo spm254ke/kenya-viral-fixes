@@ -2,39 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kenya Tech Response Hub | March 2026</title>
+    <title>Kenya Digital Response Hub 2026</title>
     <script src="https://unpkg.com/intasend-inlinejs-sdk@latest/build/intasend-inline.js"></script>
     <style>
-        body { font-family: sans-serif; background: #f9f9f9; padding: 20px; text-align: center; }
-        .viral-box { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; border-left: 8px solid #4CAF50; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h2 { color: #2e7d32; margin-top: 0; }
-        .price { font-size: 1.2rem; font-weight: bold; color: #333; }
-        .btn { background: #4CAF50; color: white; border: none; padding: 15px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; }
+        :root { --mpesa: #4CAF50; --dark: #1a1a1a; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: var(--dark); margin: 0; padding: 20px; }
+        header { background: var(--mpesa); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .price-tag { display: inline-block; background: #e8f5e9; color: var(--mpesa); padding: 5px 15px; border-radius: 20px; font-weight: bold; margin: 10px 0; }
+        .buy-btn { background: var(--mpesa); color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <h1>🇰🇪 Viral Tech Fixes (LIVE)</h1>
-    <p>Get instant solutions to the March 2nd updates.</p>
+    <header>
+        <h1>🇰🇪 March 2026: Tech Emergency Hub</h1>
+        <p>Instant fixes for today's KRA, M-Pesa, and Starlink updates.</p>
+    </header>
 
-    <div class="viral-box">
-        <h2>Ziidi Trader Automation</h2>
-        <p>Master the new M-Pesa share trading platform launched in Feb 2026.</p>
-        <div class="price">KES 2,000</div>
-        <button class="intaSendPayButton btn" data-amount="2000" data-currency="KES">Get the Script</button>
-    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>M-Pesa Number Masking Patch</h3>
+            <p>Restore customer data visibility for your Till/Paybill reconciliation after the March 1st privacy rollout.</p>
+            <div class="price-tag">KES 2,500</div>
+            <button class="intaSendPayButton buy-btn" data-amount="2500" data-currency="KES">Unlock Patch</button>
+        </div>
 
-    <div class="viral-box">
-        <h2>AI Policy Compliance Kit</h2>
-        <p>The 48-hour checklist for Kenyan AI startups to avoid the new penalties.</p>
-        <div class="price">KES 3,500</div>
-        <button class="intaSendPayButton btn" data-amount="3500" data-currency="KES">Download PDF</button>
+        <div class="card">
+            <h3>Starlink Nairobi Congestion Fix</h3>
+            <p>Specific DNS & Point-to-Point settings to bypass the 6 PM bandwidth throttling in Nairobi/Kiambu.</p>
+            <div class="price-tag">KES 1,500</div>
+            <button class="intaSendPayButton buy-btn" data-amount="1500" data-currency="KES">Get Settings</button>
+        </div>
+
+        <div class="card">
+            <h3>iTax 2026 Compliance Cheat Sheet</h3>
+            <p>Automate your P9 processing with the new KRA API bridge. No manual data entry required.</p>
+            <div class="price-tag">KES 4,500</div>
+            <button class="intaSendPayButton buy-btn" data-amount="4500" data-currency="KES">Download Bridge</button>
+        </div>
     </div>
 
     <script>
         new window.IntaSend({
             publicAPIKey: "ISPubKey_live_dc5967eb-6e6a-497c-a10f-35a76358efea",
             live: true
-        }).on("COMPLETE", () => { window.location.href="success.html"; });
+        }).on("COMPLETE", (results) => { window.location.href = "success.html"; });
     </script>
 </body>
 </html>
